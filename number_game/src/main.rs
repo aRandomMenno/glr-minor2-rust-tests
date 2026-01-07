@@ -1,7 +1,7 @@
-use std::{process::exit};
+use std::process::exit;
 
-mod random;
 mod guess;
+mod random;
 
 fn main() {
     println!("✦ ---------------[ Raad het getal! ]--------------- ✦");
@@ -21,7 +21,7 @@ fn main() {
 
     loop {
         tries += 1;
-        println!("sys://debug:random_num:{}", tries);
+        println!("sys://debug:tries:{}", tries);
         let int_guess: i16 = guess::read_input();
         if int_guess == generated_number {
             println!("sys://guess:messages:correct");
@@ -36,8 +36,7 @@ fn main() {
         println!("sys://guess:messages:incorrect");
         if int_guess >= generated_number {
             println!("sys://guess:messages:too_high");
-        }
-        else if int_guess <= generated_number {
+        } else if int_guess <= generated_number {
             println!("sys://guess:messages:too_low");
         }
         println!("sys://guess:messages:try_again");
